@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --kc-red:#c21b1c; --kc-red-dark:#8f1113; --kc-red-light:#e33a3b;
+  --carbon-black:#08090a; --industrial-black:#101214; --graphite:#191c20;
+  --steel-dark:#282d32; --steel-grey:#8e969f; --steel-light:#d4d8dc;
+  --heat-orange:#ff7a1a; --arc-blue:#b9dfff;
+}
+html { background:var(--carbon-black); color:var(--steel-light); }
+body { font-family: var(--font-body); -webkit-font-smoothing: antialiased; }
+/* Lenis handles smooth scroll; do not add scroll-behavior:smooth here. */
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--kc-red); outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+}
