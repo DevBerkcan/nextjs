@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="de" className={`${display.variable} ${body.variable} ${mono.variable}`}>
-      <body className="bg-carbon text-steel-light antialiased">
+    <html lang="de" className={`${display.variable} ${body.variable} ${mono.variable}`} suppressHydrationWarning>
+      <body className="bg-carbon text-steel-light antialiased" suppressHydrationWarning>
         <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-2 focus:top-2 focus:z-[200] focus:bg-kc-red focus:px-4 focus:py-3 focus:text-white">Zum Inhalt springen</a>
         <SmoothScroll />
         <Header />
