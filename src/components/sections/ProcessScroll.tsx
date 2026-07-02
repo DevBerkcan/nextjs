@@ -35,7 +35,7 @@ export function ProcessScroll() {
   }, [isDesktop, reduced]);
 
   return (
-    <section className="border-y border-steel-dark bg-industrial py-28" ref={root}>
+    <section id="ablauf" className="border-y border-steel-dark bg-industrial py-28" ref={root}>
       <Container>
         <div className="mb-14 max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-kc-red-light">Ablauf</p>

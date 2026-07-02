@@ -12,7 +12,13 @@ export function SmoothScroll() {
   useEffect(() => {
     if (reduced) return;
     gsap.registerPlugin(ScrollTrigger);
-    const lenis = new Lenis({ duration: 1.1, smoothWheel: true });
+    const lenis = new Lenis({
+      lerp: 0.085,
+      smoothWheel: true,
+      anchors: { offset: -88 },
+      stopInertiaOnNavigate: true,
+      prevent: (node) => node.hasAttribute('data-lenis-prevent'),
+    });
     lenis.on('scroll', ScrollTrigger.update);
     const raf = (t: number) => { lenis.raf(t * 1000); };
     gsap.ticker.add(raf);

@@ -8,24 +8,12 @@ import { Particles } from './Particles';
 
 function PipeConnection({ particleCount }: { particleCount: number }) {
   const group = useRef<THREE.Group>(null);
-  const seam = useRef<THREE.MeshStandardMaterial>(null);
   useFrame((state, delta) => {
     if (group.current) group.current.rotation.y += delta * 0.08;
-    if (seam.current) seam.current.emissiveIntensity = 1.6 + Math.sin(state.clock.elapsedTime * 2.1) * 0.25;
   });
   return (
     <Float speed={1.15} rotationIntensity={0.18} floatIntensity={0.28} floatingRange={[-0.08, 0.08]}>
       <group ref={group} rotation={[0.15, -0.45, -0.08]}>
-        {[-0.8, 0.8].map((x) => (
-          <mesh key={x} position={[x, 0, 0]} rotation={[0, 0, Math.PI / 2]} castShadow receiveShadow>
-            <cylinderGeometry args={[0.72, 0.72, 1.55, 64, 1, true]} />
-            <meshStandardMaterial color="#30363b" metalness={0.88} roughness={0.22} envMapIntensity={1.25} side={THREE.DoubleSide} />
-          </mesh>
-        ))}
-        <mesh rotation={[0, 0, Math.PI / 2]}>
-          <torusGeometry args={[0.73, 0.065, 20, 96]} />
-          <meshStandardMaterial ref={seam} color="#ff9b52" emissive="#ff5a14" emissiveIntensity={1.6} metalness={0.65} roughness={0.2} />
-        </mesh>
         <Particles count={particleCount} />
       </group>
     </Float>

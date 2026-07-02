@@ -5,10 +5,12 @@ import { ProcessScroll } from '@/components/sections/ProcessScroll';
 import { ProjectsPreview } from '@/components/sections/ProjectsPreview';
 import { QualitySafety } from '@/components/sections/QualitySafety';
 import { ContactCta } from '@/components/sections/ContactCta';
+import { ScrollRail } from '@/components/motion/ScrollRail';
 
 export default function HomePage() {
   return (
     <>
+      <ScrollRail />
       <Hero />
       <TrustBar />
       <ServicesOverview />

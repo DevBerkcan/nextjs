@@ -30,7 +30,7 @@ export function ServicesOverview() {
   }, [reducedMotion]);
 
   return (
-    <section ref={root} className="bg-carbon py-28">
+    <section id="leistungen" ref={root} className="bg-carbon py-28">
       <Container>
         <div className="mb-14 max-w-2xl">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-kc-red-light">Leistungen</p>

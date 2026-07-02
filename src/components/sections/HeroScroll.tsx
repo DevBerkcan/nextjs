@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ScrollExperience } from '@/components/three/ScrollExperience';
 import { Button } from '@/components/ui/Button';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { site } from '@/lib/seo/site';
@@ -54,7 +53,7 @@ export function HeroScroll() {
   }, [reducedMotion]);
 
   return (
-    <section ref={root} className="relative h-svh min-h-[680px] overflow-hidden bg-carbon text-white">
+    <section id="hero" ref={root} className="relative h-svh min-h-[680px] overflow-hidden bg-carbon text-white">
       <div className="absolute inset-0">
         {heroImages.map(([src, alt], index) => (
           <div key={src} data-mask-image={index === 0 ? undefined : ''} className={index === 0 ? 'absolute inset-0' : 'hero-mask-image absolute inset-0'} style={{ zIndex: index === 0 ? 0 : heroImages.length - index }}>
@@ -64,8 +63,6 @@ export function HeroScroll() {
         <div className="absolute inset-0 z-[7] bg-[linear-gradient(90deg,rgba(8,9,10,.88)_0%,rgba(8,9,10,.55)_42%,rgba(8,9,10,.2)_72%,rgba(8,9,10,.52)_100%)]" />
         <div className="absolute inset-0 z-[8] bg-[radial-gradient(circle_at_68%_48%,transparent_0%,rgba(8,9,10,.12)_42%,rgba(8,9,10,.72)_100%)]" />
       </div>
-
-      <div className="pointer-events-none absolute inset-y-0 right-0 z-[9] hidden w-[58%] opacity-80 lg:block"><ScrollExperience /></div>
 
       <div data-hero-content className="relative z-10 flex h-full flex-col justify-between px-5 pb-8 pt-28 md:px-10 md:pb-10 lg:px-14">
         <div className="flex items-start justify-between font-mono text-[10px] uppercase tracking-[0.2em] text-white/65 md:text-xs">
