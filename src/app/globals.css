@@ -20,4 +20,5 @@ select:focus-visible, textarea:focus-visible {
 }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .001ms !important; transition-duration: .001ms !important; }
+  .hero-mask-image { display: none; }
 }
